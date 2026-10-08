@@ -3,6 +3,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+   [SerializeField] private GameObject enemyPrefab;
+    GameObject createdEnemy;
+    [SerializeField]float speed = 5f;
+
+
     //TODO
 
     // Prefab del enemigo que vamos a generar
@@ -20,11 +25,25 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         //TODO: Llamamos a la generación de enemigos
+        //Instanciar un enemigo
+
+        createdEnemy = Instantiate(enemyPrefab,Vector3.zero,Quaternion.identity);
+
+       
     }
 
     void Update()
     {
         //TODO:  Reiniciamos la ronda pulsando R
+      
+        createdEnemy.transform.position += new Vector3(3, 0, 0)*Time.deltaTime*speed;
+
+        if (createdEnemy.transform.position.x>10.47)
+        {
+            createdEnemy.transform.position = Vector3.zero;
+        }
+
+
     }
 
     //Generar oleada
