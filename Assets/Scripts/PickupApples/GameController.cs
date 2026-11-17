@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Collections;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -6,17 +7,17 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class GameController : MonoBehaviour
 {
-    [SerializeField] private GameObject appleprefab ;
+    [SerializeField] private GameObject appleprefab;
     [SerializeField] private Transform playerTransform;
 
     private float timer;
     private float score;
 
     //Lista para almacenar las manzanas
-    List <GameObject> appleList = new List <GameObject>();
-    List<GameObject> appleListRemove = new List<GameObject> ();
+    List<GameObject> appleList = new List<GameObject>();
+    List<GameObject> appleListRemove = new List<GameObject>();
 
-    [SerializeField]float gravity;
+    [SerializeField] float gravity;
     [SerializeField] private TMP_Text scoreText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -25,14 +26,33 @@ public class GameController : MonoBehaviour
         scoreText.text = "Score: " + score;
         timer = 0f;
         score = 0f;
-    }
 
+        //InvokeRepeating(nameof(GenerarManzana), 0.5f, 3f); 
+        //Se invoca la primera vez a los 0.5f segundos y luego cada 3f seg
+
+        StartCoroutine(nameof(GenerarManzana));
+
+    }
+    private IEnumerator GenerarManzana()
+    {
+        GameObject newApple = Instantiate(appleprefab);
+
+        newApple.transform.position = new Vector3(Random.Range(-3, 3), 5.5f);
+
+        appleList.Add(newApple);
+
+        yield return new WaitForSeconds(10f);
+
+        Debug.Log("Han pasado 10seg");
+
+        
+    }
     // Update is called once per frame
     void Update()
     {
         timer += Time.deltaTime;
 
-        if (timer > 1f)
+        /*if (timer > 1f)
         {
             //Se ha completado el timer
             timer = 0f;
@@ -78,10 +98,10 @@ public class GameController : MonoBehaviour
 
             Destroy(apple);
         }
-
-       
-
+        */
     }
 
-   
+
+
+
 }
