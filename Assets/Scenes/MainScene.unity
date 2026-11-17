@@ -179,6 +179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ddc90b25f2d847faa0d171dcb56ee10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  enemyPrefab: {fileID: 6723212666856487154, guid: 1fa4848af526c45a1a0509d0ce447a16, type: 3}
+  speed: 5
 --- !u!4 &171467583
 Transform:
   m_ObjectHideFlags: 0
@@ -250,8 +252,8 @@ Transform:
   m_GameObject: {fileID: 464969394}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.60852, y: 0.45629, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.65, y: 0.4, z: 0}
+  m_LocalScale: {x: 0.97636664, y: 0.975, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1629460360}
@@ -370,7 +372,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -395,9 +397,9 @@ Transform:
   m_GameObject: {fileID: 519420028}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: 0.04, y: 0, z: -10}
+  m_LocalScale: {x: 1.22, y: 1.22, z: 1.22}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -573,7 +575,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -9.48, y: 2.61, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.87832886, y: 0.94107, z: 0.94107}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 464969395}
